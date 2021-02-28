@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": ["react-app", "plugin:prettier/recommended"],
+  "plugins": ["react", "import", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "if",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "if"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            "pattern": "react**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "*",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "prettier/prettier": ["error"],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ]
+  }
+}
