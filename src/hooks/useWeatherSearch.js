@@ -1,28 +1,36 @@
 import { useRef, useState } from 'react';
 
 import { getLocationInfo, getWeatherInfo } from '../api/WeatherApi';
+import { setLoading } from '../context/app';
 import { validate } from '../shared';
+import { useAppContext } from './useAppContext';
 
 export const useWeatherSearch = () => {
   const inputRef = useRef();
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState();
+  const { dispatch } = useAppContext();
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault();
     const query = inputRef.current.value;
     const error = validate(query);
-    setError(error);
     !error && onSubmit(query);
+    setError(error);
     setSearchResults([]);
   };
 
   const onSubmit = async (query) => {
+    setLoading(dispatch, true);
+
     try {
       const location = await getLocationInfo(query);
       const weather = await getWeatherInfo(location?.data[0]?.woeid);
       setSearchResults(weather.data.consolidated_weather);
     } catch {
       console.log('City is not found');
+    } finally {
+      setLoading(dispatch, false);
     }
   };
 
