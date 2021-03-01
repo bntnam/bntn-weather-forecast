@@ -1,10 +1,10 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
 
-import { WeatherCurrent } from './WeatherCurrent';
-import { WeatherItem } from './WeatherItem';
+import { WeatherCurrent } from '../WeatherCurrent';
+import { WeatherItem } from '../WeatherItem';
+import { Wrapper, Group } from './style';
 
 const renderWeatherItem = (weatherItem, i) => {
   if (i === 0) {
@@ -15,36 +15,11 @@ const renderWeatherItem = (weatherItem, i) => {
 };
 
 export const WeatherList = ({ weatherList, showResults }) => (
-  <WeatherList.Wrapper showResults={showResults}>
+  <Wrapper showResults={showResults}>
     <WeatherCurrent currentWeather={weatherList[0]} />
-    <WeatherList.Group>{weatherList.map(renderWeatherItem)}</WeatherList.Group>
-  </WeatherList.Wrapper>
+    <Group>{weatherList.map(renderWeatherItem)}</Group>
+  </Wrapper>
 );
-
-const appear = keyframes`
-  from { 
-    transform: translateY(50%);
-    opacity: 0;
-  } 
-  to {
-    transform: translateY(0);
-    opacity: 1
-  }
-`;
-
-WeatherList.Wrapper = styled.div`
-  width: 100%;
-  max-width: 1000px;
-  position: relative;
-  top: 300px;
-  animation: ${appear} 0.5s;
-`;
-
-WeatherList.Group = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-`;
 
 WeatherList.propTypes = {
   weatherList: PropTypes.array.isRequired,
