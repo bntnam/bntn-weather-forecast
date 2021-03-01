@@ -1,12 +1,19 @@
 import React from 'react';
 
-import { GlobalStyle, theme } from 'shared';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+
+import { Weather } from './components';
+import { GlobalStyle, theme } from './shared';
 
 const App = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <div className="App">Hello World!</div>
+    <Router>
+      <Switch>
+        <Route exact component={Weather} />
+      </Switch>
+    </Router>
   </ThemeProvider>
 );
 

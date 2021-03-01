@@ -8,9 +8,12 @@
     "lint": "eslint src/**/*.js  --fix"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "http-proxy-middleware": "^1.0.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
     "styled-media-query": "^2.1.2"
@@ -36,6 +39,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "https://www.metaweather.com",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
