@@ -1,16 +1,21 @@
 import React from 'react';
 
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export const WeatherSearch = ({ inputRef, handleSearch }) => (
-  <WeatherSearch.Wrapper onSubmit={handleSearch}>
+export const WeatherSearch = ({ inputRef, handleSearch, showResults }) => (
+  <WeatherSearch.Wrapper onSubmit={handleSearch} showResults={showResults}>
     <WeatherSearch.Input type="text" placeholder="Enter your city" ref={inputRef} />
+    <WeatherSearch.Icon icon={faSearch} />
   </WeatherSearch.Wrapper>
 );
 
 WeatherSearch.Wrapper = styled.form`
-  margin-bottom: 300px;
+  top: ${({ showResults }) => (showResults ? '-10%' : '25%')};
+  position: relative;
+  transition: 0.8s;
 `;
 
 WeatherSearch.Input = styled.input`
@@ -19,11 +24,10 @@ WeatherSearch.Input = styled.input`
   font-size: 16px;
   width: 400px;
   height: 20px;
-  padding: 10px 15px 10px 40px;
+  padding: 10px 15px 10px 20px;
   border: none;
   border-radius: 20px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: 0.2s;
 
   &:focus {
     color: ${({ theme }) => theme.colors.black};
@@ -32,6 +36,14 @@ WeatherSearch.Input = styled.input`
   }
 `;
 
+WeatherSearch.Icon = styled(FontAwesomeIcon)`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%, -50%);
+`;
+
 WeatherSearch.propTypes = {
   handleSearch: PropTypes.func.isRequired,
+  showResults: PropTypes.bool,
 };

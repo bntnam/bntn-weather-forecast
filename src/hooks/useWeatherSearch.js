@@ -8,6 +8,7 @@ import { useAppContext } from './useAppContext';
 export const useWeatherSearch = () => {
   const inputRef = useRef();
   const [searchResults, setSearchResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
   const [error, setError] = useState();
   const { dispatch } = useAppContext();
 
@@ -17,6 +18,7 @@ export const useWeatherSearch = () => {
     const error = validate(query);
     !error && onSubmit(query);
     setError(error);
+    setShowResults(true);
     setSearchResults([]);
   };
 
@@ -27,6 +29,7 @@ export const useWeatherSearch = () => {
       const location = await getLocationInfo(query);
       const weather = await getWeatherInfo(location?.data[0]?.woeid);
       setSearchResults(weather.data.consolidated_weather);
+      inputRef.current.value = '';
     } catch {
       console.log('City is not found');
     } finally {
@@ -39,5 +42,6 @@ export const useWeatherSearch = () => {
     handleSearch,
     searchResults,
     error,
+    showResults,
   };
 };
