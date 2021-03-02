@@ -13,10 +13,9 @@ const appear = keyframes`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1000px;
-  position: relative;
-  top: 300px;
+  max-width: 1100px;
   animation: ${appear} 0.5s;
+  margin-top: -50px;
 `;
 
 export const Group = styled.div`

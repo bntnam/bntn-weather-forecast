@@ -14,14 +14,16 @@ const renderWeatherItem = (weatherItem, i) => {
   return <WeatherItem weatherItem={weatherItem} key={i} />;
 };
 
-export const WeatherList = ({ weatherList, showResults }) => (
-  <Wrapper showResults={showResults}>
-    <WeatherCurrent currentWeather={weatherList[0]} />
-    <Group>{weatherList.map(renderWeatherItem)}</Group>
-  </Wrapper>
-);
+export const WeatherList = ({ weatherList, showResults, cityName }) =>
+  console.log(weatherList) || (
+    <Wrapper showResults={showResults}>
+      <WeatherCurrent currentWeather={weatherList[0]} cityName={cityName} />
+      <Group>{weatherList.map(renderWeatherItem)}</Group>
+    </Wrapper>
+  );
 
 WeatherList.propTypes = {
   weatherList: PropTypes.array.isRequired,
   showResults: PropTypes.bool,
+  cityName: PropTypes.string.isRequired,
 };
