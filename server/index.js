@@ -1,13 +1,10 @@
-const path = require('path');
-
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const morgan = require('morgan');
 
 const app = express();
 
-const HOST = 'localhost';
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const API_SERVICE_URL = 'https://www.metaweather.com';
 
 app.use(morgan('dev'));
@@ -18,10 +15,6 @@ app.get('/info', (req, res) => {
 
 app.use(express.static(`${__dirname}/../build`));
 
-app.get('/weather/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
-
 app.use(
   '/api',
   createProxyMiddleware({
@@ -30,6 +23,6 @@ app.use(
   })
 );
 
-app.listen(PORT, HOST, () => {
-  console.log(`Starting proxy at ${HOST}:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Starting proxy at ${PORT}`);
 });

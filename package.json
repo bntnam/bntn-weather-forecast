@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "node server/index.js",
     "build": "react-scripts build",
-    "server": "npm run build && nodemon server/index.js",
     "lint": "eslint src/**/*.js --fix"
   },
   "dependencies": {
@@ -44,7 +44,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://www.metaweather.com",
+  "engines": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
