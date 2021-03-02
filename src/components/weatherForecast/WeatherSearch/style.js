@@ -1,10 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
+import { media } from '../../../shared';
+
 export const Wrapper = styled.form`
-  top: ${({ showResults }) => (showResults ? '-10%' : '25%')};
+  top: ${({ showResults }) => (showResults ? '0%' : '15%')};
   position: relative;
   transition: 0.8s;
+  margin-top: 100px;
 `;
 
 export const Input = styled.input`
@@ -23,6 +26,15 @@ export const Input = styled.input`
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     outline: none;
   }
+
+  ${media.lessThan('tablet')`
+    width: 300px;
+    padding: 10px 10px 10px 20px;
+  `}
+
+  ${media.lessThan('mobile')`
+    width: 200px;
+  `}
 `;
 
 export const Icon = styled(FontAwesomeIcon)`
@@ -30,4 +42,12 @@ export const Icon = styled(FontAwesomeIcon)`
   top: 50%;
   right: 10px;
   transform: translate(-50%, -50%);
+
+  ${media.lessThan('tablet')`
+    right: 0;
+  `}
+
+  ${media.lessThan('tablet')`
+    right: 10px;
+  `}
 `;

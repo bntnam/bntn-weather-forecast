@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { media } from '../../../shared';
+
 export const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
@@ -10,23 +12,38 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${media.lessThan('mobile')`
+    min-height: 1000px;
+  `}
 `;
 
 export const Title = styled.h1`
-  opacity: ${({ showResults }) => (showResults ? '0' : '1')};
+  display: ${({ showResults }) => (showResults ? 'none' : 'block')};
   color: ${({ theme }) => theme.colors.white};
   position: relative;
   top: 25%;
   font-size: 5rem;
   padding: 0;
-  transition: 0.5s;
+
+  ${media.lessThan('tablet')`
+    font-size: 3rem;
+    top: 23%;
+  `}
+
+  ${media.lessThan('mobile')`
+    font-size: 1.5rem;
+  `}
 `;
 
 export const SubTitle = styled.h3`
-  opacity: ${({ showResults }) => (showResults ? '1' : '0')};
+  display: ${({ showResults }) => (showResults ? 'block' : 'none')};
   color: ${({ theme }) => theme.colors.white};
   position: absolute;
   top: 0;
   left: 20px;
-  transition: 0.5s;
+
+  ${media.lessThan('mobile')`
+    font-size: 1rem;
+  `}
 `;

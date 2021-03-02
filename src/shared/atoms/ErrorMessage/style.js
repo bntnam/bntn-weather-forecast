@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled, { keyframes } from 'styled-components';
 
+import { media } from '../../styles';
+
 const appear = keyframes`
   from { 
     transform: translateY(50%);
@@ -22,14 +24,41 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   animation: ${appear} 0.5s;
+  margin-top: 50px;
+
+  ${media.lessThan('tablet')`
+    max-width: 400px;
+    padding: 5px;
+  `}
+
+  ${media.lessThan('mobile')`
+    max-width: 300px;
+    padding: 5px;
+  `}
 `;
 
 export const Text = styled.p`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.white};
   margin-right: 10px;
+
+  ${media.lessThan('tablet')`
+    font-size: 1.2rem;
+  `}
+
+  ${media.lessThan('mobile')`
+    font-size: 1rem;
+  `}
 `;
 
 export const Icon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.white};
+
+  ${media.lessThan('tablet')`
+    width: 30px !important;
+  `}
+
+  ${media.lessThan('mobile')`
+    width: 20px !important;
+  `}
 `;
