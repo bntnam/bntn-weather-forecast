@@ -49,7 +49,6 @@ export const StatusIcon = styled.img`
 
 export const WeatherIcon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.colors.white};
-  width: 100px;
   margin-bottom: 5px;
 `;
 

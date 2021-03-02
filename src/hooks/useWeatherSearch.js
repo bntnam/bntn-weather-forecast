@@ -33,7 +33,7 @@ export const useWeatherSearch = () => {
       setSearchResults(weather?.data.consolidated_weather);
       inputRef.current.value = '';
     } catch {
-      console.log('City is not found');
+      setError('City is not found');
     } finally {
       setLoading(dispatch, false);
     }
