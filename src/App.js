@@ -7,20 +7,18 @@ import { Weather } from './components';
 import { AppStateProvider } from './context/app';
 import { GlobalStyle, LoadingScreen, theme } from './shared';
 
-const App = () => {
-  return (
-    <AppStateProvider>
-      <ThemeProvider theme={theme}>
-        <LoadingScreen />
-        <GlobalStyle />
-        <Router>
-          <Switch>
-            <Route exact component={Weather} />
-          </Switch>
-        </Router>
-      </ThemeProvider>
-    </AppStateProvider>
-  );
-};
+const App = () => (
+  <AppStateProvider>
+    <ThemeProvider theme={theme}>
+      <LoadingScreen />
+      <GlobalStyle />
+      <Router>
+        <Switch>
+          <Route exact component={Weather} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </AppStateProvider>
+);
 
 export default App;

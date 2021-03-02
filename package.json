@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src/**/*.js  --fix"
+    "server": "npm run build && nodemon server/index.js",
+    "lint": "eslint src/**/*.js --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -13,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^1.0.6",
+    "morgan": "^1.10.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -41,6 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
   },
   "proxy": "https://www.metaweather.com",
   "husky": {
