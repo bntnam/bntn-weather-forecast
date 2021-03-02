@@ -1,5 +1,5 @@
-import { useAppContext } from '../../hooks/useAppContext';
-import { Dimmer } from './Dimmer';
+import { useAppContext } from '../../../hooks/useAppContext';
+import { Dimmer } from '../Dimmer';
 
 export const LoadingScreen = () => {
   const {
