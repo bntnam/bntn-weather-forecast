@@ -1,17 +1,22 @@
 {
-  "name": "bntnam-weather-forecast",
+  "name": "bntn-weather-forecast",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "server": "npm run build && nodemon server/index.js",
-    "lint": "eslint src/**/*.js --fix"
+    "lint": "eslint src/**/*.js --fix",
+    "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage --watchAll=false"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^1.0.6",
     "morgan": "^1.10.0",
