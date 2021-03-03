@@ -13,6 +13,6 @@ export const WeatherSearch = ({ inputRef, handleSearch, showResults }) => (
 );
 
 WeatherSearch.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func,
   showResults: PropTypes.bool,
 };

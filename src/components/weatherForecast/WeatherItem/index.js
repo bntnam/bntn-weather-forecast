@@ -15,7 +15,7 @@ export const WeatherItem = ({ weatherItem }) => {
   } = weatherItem;
 
   return (
-    <Wrapper>
+    <Wrapper className="weather-item">
       <Day>{getDay(applicableDate)}</Day>
       <Status>{weatherStateName}</Status>
       <Icon src={getWeatherIconUrl(weatherStateAbbr)} alt="Weather status" />

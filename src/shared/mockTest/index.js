@@ -1,1 +1,2 @@
-export * from './MockTheme';
+export * from './MockProvider';
+export * from './MockData';

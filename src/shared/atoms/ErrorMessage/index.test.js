@@ -3,15 +3,16 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { ErrorMessage } from '.';
-import { MockTheme } from '../../mockTest';
+import { MockProvider } from '../../mockTest';
 
 describe('ErrorMessage component', () => {
   test('should match the snapshot', () => {
     const { container } = render(
-      <MockTheme>
+      <MockProvider>
         <ErrorMessage />
-      </MockTheme>
+      </MockProvider>
     );
+
     expect(container.firstChild).toMatchSnapshot();
   });
 });
