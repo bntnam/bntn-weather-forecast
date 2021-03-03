@@ -64,7 +64,7 @@ export const StatusIcon = styled.img`
   width: 200px;
   height: auto;
   margin-bottom: 15px;
-  filter: brightness(1.2);
+  filter: brightness(1.5);
 
   ${media.lessThan('tablet')`
     width: 80px;
