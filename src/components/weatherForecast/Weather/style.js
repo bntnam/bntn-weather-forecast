@@ -13,8 +13,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 900px;
 
-  ${media.lessThan('mobile')`
+  ${media.lessThan('tablet')`
     min-height: 1000px;
   `}
 `;
