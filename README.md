@@ -4,7 +4,7 @@
 
 - Weather Forecast is an applcation to let user search for weather information based on the city name.
 - Website: https://bntn-weather-forecast.herokuapp.com (since I'm using the free server host Heroku, please expect the slow loading at the first time).
-- This application is designed to server responsive layouts.
+- This application is designed to serve responsive layouts.
 
 <img src="https://bntnam.github.io/img/portfolio/weather-forecast-desktop.png" width="400" alt="desktop" />
 <br />
@@ -38,7 +38,8 @@ $ npm install
 ```
 
 2. Running:
-   2.1. To run the application on local:
+
+2.1. To run the application on local:
 
 ```
 $ npm start
@@ -50,8 +51,6 @@ $ npm start
 ```
 $ npm run server
 ```
-
-2.3. To see the test coverage:
 
 ## Testing
 
@@ -83,5 +82,6 @@ bntn-weather-forecast/
 │       ├── mockTest        # Mocks are served testing
 │       ├── styles          # Style rules
 │       └── utils           # Utilities function
-└──
+└── .eslintrc               # Linter
+└── package.json            # Pre-commit is included
 ```
