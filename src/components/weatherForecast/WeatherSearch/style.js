@@ -42,6 +42,7 @@ export const Icon = styled(FontAwesomeIcon)`
   top: 50%;
   right: 10px;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 
   ${media.lessThan('tablet')`
     right: 0;

@@ -19,7 +19,7 @@ export const WeatherCurrent = ({ currentWeather, cityName }) => {
   } = currentWeather;
 
   return (
-    <Wrapper>
+    <Wrapper className="weather-current weather-item">
       <City>{cityName}</City>
       <Day>{getDay(applicableDate)}</Day>
       <Container>

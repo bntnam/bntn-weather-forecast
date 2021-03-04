@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dimmer component should match the snapshot 1`] = `
+<div
+  class="sc-bdfBwQ dtsALZ"
+>
+  <img
+    alt="Spinner"
+    class="sc-gsTCUz FTLmA"
+    src="spinner.gif"
+  />
+</div>
+`;

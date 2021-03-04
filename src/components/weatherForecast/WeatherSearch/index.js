@@ -8,11 +8,11 @@ import { Wrapper, Input, Icon } from './style';
 export const WeatherSearch = ({ inputRef, handleSearch, showResults }) => (
   <Wrapper onSubmit={handleSearch} showResults={showResults}>
     <Input type="text" placeholder="Enter your city" ref={inputRef} />
-    <Icon icon={faSearch} />
+    <Icon icon={faSearch} onClick={handleSearch} data-testid="submitButton" />
   </Wrapper>
 );
 
 WeatherSearch.propTypes = {
-  handleSearch: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func,
   showResults: PropTypes.bool,
 };

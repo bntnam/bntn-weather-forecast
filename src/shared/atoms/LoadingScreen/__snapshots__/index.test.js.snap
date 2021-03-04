@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingScreen component should match the snapshot when loading 1`] = `
+<div
+  class="sc-bdfBwQ dtsALZ"
+>
+  <img
+    alt="Spinner"
+    class="sc-gsTCUz FTLmA"
+    src="spinner.gif"
+  />
+</div>
+`;
