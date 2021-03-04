@@ -1,10 +1,15 @@
 # Weather Forecast App
 
-# Introduction
+## Introduction
 
 - Weather Forecast is an applcation to let user search for weather information based on the city name.
-- Website: https://bntn-weather-forecast.herokuapp.com/ (since I'm using the free server host Heroku, please expect the slow loading at the first time).
+- Website: https://bntn-weather-forecast.herokuapp.com (since I'm using the free server host Heroku, please expect the slow loading at the first time).
 - This application is designed to server responsive layouts.
+
+<img src="https://bntnam.github.io/img/portfolio/weather-forecast-desktop.png" width="400" alt="desktop" />
+<br />
+<img src="https://bntnam.github.io/img/portfolio/weather-forecast-tablet.png" height="300" alt="tablet" />
+<img src="https://bntnam.github.io/img/portfolio/weather-forecast-mobile.png" height="300" alt="mobile" />
 
 ## Overview
 
@@ -57,6 +62,8 @@ $ npm run test:coverage
 - One integration test for user flow is defined in `src/__test__`
 - Other unit tests are named as `{name}.test.js` within the same component's folders
 - Snapshot tests are applied for atom components.
+
+<img src="https://bntnam.github.io/img/portfolio/weather-forecast-coverage.png" width="400" alt="desktop" />
 
 ## Project Structure
 

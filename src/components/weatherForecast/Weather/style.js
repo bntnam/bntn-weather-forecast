@@ -13,10 +13,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  ${media.lessThan('mobile')`
-    min-height: 1000px;
-  `}
+  min-height: 900px;
 `;
 
 export const Title = styled.h1`
