@@ -14,6 +14,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 900px;
+
+  ${media.lessThan('tablet')`
+    min-height: 1000px;
+  `}
 `;
 
 export const Title = styled.h1`
