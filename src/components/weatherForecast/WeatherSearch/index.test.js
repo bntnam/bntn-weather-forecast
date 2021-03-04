@@ -14,5 +14,6 @@ describe('WeatherSearch component', () => {
     );
 
     expect(screen.getByPlaceholderText(/Enter your city/i)).toBeDefined();
+    expect(screen.getByTestId('submitButton')).toBeDefined();
   });
 });
